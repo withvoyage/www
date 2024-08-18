@@ -30,6 +30,7 @@
     "react-markdown": "^9.0.1",
     "react-router-dom": "^6.25.1",
     "recharts": "^2.12.7",
+    "rehype-raw": "^7.0.0",
     "remark-breaks": "^4.0.0",
     "slate-ui": "1.0.52",
     "yarn": "^1.22.22"

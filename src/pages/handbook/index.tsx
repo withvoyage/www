@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Construction, GitPullRequest, TriangleAlert } from 'lucide-react'
 import Markdown from 'react-markdown'
 import { useParams } from 'react-router-dom'
+import rehypeRaw from 'rehype-raw'
 import remarkBreaks from 'remark-breaks'
 import { Button, Icon } from 'slate-ui'
 
@@ -18,6 +19,7 @@ type Contributor = {
   avatar_url: string
   login: string
   email: string
+  profile_url: string
 }
 
 export function HandbookPage() {
@@ -69,6 +71,7 @@ export function HandbookPage() {
                 return {
                   ...item,
                   email,
+                  profile_url: item.html_url,
                 }
               })
             )
@@ -96,12 +99,14 @@ export function HandbookPage() {
                 <span className="text-sm text-muted">Contributors:</span>
                 <div className="flex -gap-4">
                   {contributors.map((contributor) => (
-                    <img
-                      key={contributor.email}
-                      className="rounded-full h-8 w-8 border"
-                      src={contributor.avatar_url}
-                      alt={contributor.login}
-                    />
+                    <a href={contributor.profile_url} target="_blank">
+                      <img
+                        key={contributor.email}
+                        className="rounded-full h-8 w-8 border"
+                        src={contributor.avatar_url}
+                        alt={contributor.login}
+                      />
+                    </a>
                   ))}
                 </div>
               </div>
@@ -117,11 +122,15 @@ export function HandbookPage() {
             </a>
           </span>
 
-          <Markdown remarkPlugins={[remarkBreaks]}>{content.replace(/\\/gi, '\n')}</Markdown>
+          {!content.includes('!DOCTYPE') && (
+            <Markdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkBreaks]}>
+              {content.replace(/\\/gi, '\n')}
+            </Markdown>
+          )}
         </div>
       )}
 
-      {!content && (
+      {(!content || content.includes('!DOCTYPE')) && (
         <div className="border rounded-lg bg-muted flex-1 flex flex-col relative p-8 overflow-hidden gap-2">
           <div className="flex items-center gap-2">
             <Icon icon={TriangleAlert} size="lg" className="text-info-700" />

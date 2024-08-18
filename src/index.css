@@ -113,5 +113,11 @@ body {
 
 .mkdwn a {
   color: var(--info-600);
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+.mkdwn ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
 }

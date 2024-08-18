@@ -1,10 +1,8 @@
 import { PropsWithChildren } from 'react'
 
-import { Code2, Crown, HandPlatter, PackageSearch, Users } from 'lucide-react'
+import { Code2, Crown, HandPlatter, Lightbulb, Users } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-import { ActionIcon, Button, cn } from 'slate-ui'
-
-import { DOTTED_CLASS } from '@utils/colors'
+import { ActionIcon, Button } from 'slate-ui'
 
 import { SplashWrapper } from './'
 
@@ -36,9 +34,9 @@ export const SIDEBAR_GROUPS: {
     name: 'Product',
     items: [
       {
-        name: 'Product Overview',
-        icon: PackageSearch,
-        link: '/handbook/product/overview',
+        name: 'Long Term Vision',
+        icon: Lightbulb,
+        link: '/handbook/product/long-term-vision',
       },
       {
         name: 'Installation',
@@ -54,7 +52,7 @@ export function HandbookLayout({ children }: PropsWithChildren) {
   return (
     <SplashWrapper>
       <div className="w-screen h-full flex flex-1 items-stretch">
-        <div className="fixed top-16 bottom-16 left-0 h-full p-3 border-r flex flex-col items-center lg:items-stretch w-16 lg:w-72 gap-2 bg-white">
+        <div className="fixed bg-muted top-16 bottom-16 left-0 h-full p-3 border-r flex flex-col items-center lg:items-stretch w-16 lg:w-72 gap-2">
           {SIDEBAR_GROUPS.map((group) => (
             <div className="flex flex-col gap-1 w-full" key={group.name}>
               <div className="gap-2 items-center hidden lg:flex w-full pl-2 mt-3">
@@ -93,8 +91,8 @@ export function HandbookLayout({ children }: PropsWithChildren) {
             </div>
           ))}
         </div>
-        <div className={cn('flex-1 min-w-0 bg-muted p-8 ml-16 lg:ml-72', DOTTED_CLASS)}>
-          <div className="bg-white rounded-lg border p-8 gap-8 h-full overflow-y-auto flex flex-col">{children}</div>
+        <div className="bg-white  ml-16 lg:ml-72 min-w-0 flex-1 rounded-lg p-8 gap-8 overflow-y-auto flex flex-col">
+          {children}
         </div>
       </div>
     </SplashWrapper>

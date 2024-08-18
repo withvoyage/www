@@ -15,7 +15,7 @@ export function SplashCTAButton({
       variant="primary"
       className={cn('w-fit gap-2', className)}
       onClick={() => {
-        window.open('https://cal.com/bryan-houlton-5uvxqc/voyage-beta', '_blank')
+        window.open('https://cal.com/bryan-houlton-5uvxqc/beta-onboarding', '_blank')
       }}
       iconLeft={icon}
       {...rest}
@@ -54,7 +54,7 @@ export function SplashWrapper({ children }: { children: React.ReactNode }) {
               },
               {
                 text: 'Handbook',
-                href: '/handbook/introduction',
+                href: '/handbook/company/what-we-believe',
               },
             ].map((item) => (
               <a href={item.href} key={item.href} className="hidden md:block">

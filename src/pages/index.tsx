@@ -13,7 +13,7 @@ import { getRandomBlueishColor } from '@utils/colors'
 const flare = 10 // How much the data closer to the ends of the domain should flare out
 const amplitude = 1 // How much the data should vary
 const length = 15
-const numLines = 5
+const numLines = 7
 const midpoint = (length - 1) / 2
 const clampSpread = 2
 const series = Array.from({ length: numLines }, (_, i) => ({
@@ -46,9 +46,9 @@ export function TabContent({ children, className, ...rest }: HTMLProps<HTMLDivEl
 export function SplashPage() {
   return (
     <SplashWrapper>
-      <div className="flex flex-col items-center gap-4 mt-64 mb-32">
+      <div className="flex flex-col items-center gap-4 mt-48 mb-32">
         <h1 className="text-5xl font-bold text-center z-10">
-          A marketing stack <br></br>that grows with you.
+          A growth stack <br></br>that grows with you.
         </h1>
         <p className="text-lg text-center z-10">
           Modern marketing tools aren't built for startups.<br></br>Voyage is.
