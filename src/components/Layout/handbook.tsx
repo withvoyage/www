@@ -94,7 +94,7 @@ export function HandbookLayout({ children }: PropsWithChildren) {
           ))}
         </div>
         <div className={cn('flex-1 min-w-0 bg-muted p-8 ml-16 lg:ml-72', DOTTED_CLASS)}>
-          <div className="bg-white rounded-lg border p-8 h-full overflow-y-auto">{children}</div>
+          <div className="bg-white rounded-lg border p-8 gap-8 h-full overflow-y-auto flex flex-col">{children}</div>
         </div>
       </div>
     </SplashWrapper>

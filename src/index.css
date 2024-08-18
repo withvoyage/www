@@ -110,3 +110,8 @@ body {
 .mkdwn p {
   margin-bottom: 0.5rem;
 }
+
+.mkdwn a {
+  color: var(--info-600);
+  text-decoration: underline;
+}
