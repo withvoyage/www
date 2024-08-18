@@ -7,7 +7,6 @@ import ReactDOM from 'react-dom/client'
 import { HelmetProvider } from 'react-helmet-async'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { SlateProvider } from 'slate-ui'
-import { Toaster } from 'sonner'
 
 import { SplashPage } from './pages/'
 import { PageNotFound } from './pages/404'
@@ -37,7 +36,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>
       <SlateProvider>
-        <Toaster />
         <RouterProvider router={splashRouter} />
       </SlateProvider>
     </HelmetProvider>
