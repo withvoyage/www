@@ -93,3 +93,20 @@ body {
   --info-800: #075985;
   --info-900: #0c4a6e;
 }
+
+.mkdwn h1:not(:first-child),
+.mkdwn h2:not(:first-child),
+.mkdwn h3:not(:first-child),
+.mkdwn h4:not(:first-child),
+.mkdwn h5:not(:first-child),
+.mkdwn h6:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+.mkdwn h1 .mkdwn h2 .mkdwn h3 .mkdwn h4 .mkdwn h5 .mkdwn h6 {
+  margin-bottom: 0.5rem;
+}
+
+.mkdwn p {
+  margin-bottom: 0.5rem;
+}

@@ -1,8 +1,12 @@
-export function getRandomColor() {
+export function getRandomBlueishColor() {
   var letters = '0123456789ABCDEF'
   var color = '#'
   for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)]
+    if (i < 2) {
+      color += letters[Math.floor(Math.random() * 4 + 4)]
+      continue
+    }
+    color += letters[Math.floor(Math.random() * 12 + 4)]
   }
   return color
 }

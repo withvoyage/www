@@ -1,100 +1,33 @@
 import { HTMLProps } from 'react'
 
-import { FlaskRound, LocateFixed, LucideIcon, ShipWheel } from 'lucide-react'
-import { Helmet } from 'react-helmet-async'
-import { useNavigate } from 'react-router-dom'
+import { FlaskRound, LocateFixed } from 'lucide-react'
 import { Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
-import { Button, cn, Icon } from 'slate-ui'
-import { ButtonProps } from 'slate-ui/dist/cjs/components/Button/Button.types'
+import { cn, Icon } from 'slate-ui'
 
-import { getRandomColor } from '@utils/colors'
+import { SplashCTAButton, SplashWrapper } from '@components/Layout'
+import { getRandomBlueishColor } from '@utils/colors'
 
-const series = Array.from({ length: 3 }, (_, i) => ({
-  name: 'Variant ' + i,
-  data: Array.from({ length: 10 }, (_, i) => ({
+// Generate a similar set of lines, but they all converge
+// to the middle of the possible range of values at the center of
+// the x-axis domain.
+const flare = 10 // How much the data closer to the ends of the domain should flare out
+const amplitude = 1 // How much the data should vary
+const length = 15
+const numLines = 5
+const midpoint = (length - 1) / 2
+const clampSpread = 2
+const series = Array.from({ length: numLines }, (_, i) => ({
+  name: i,
+  data: Array.from({ length }, (_, i) => ({
     category: i,
-    value: Math.random(),
+    value:
+      Math.abs(i - midpoint) < clampSpread
+        ? 0
+        : (Math.random() - 0.5) * amplitude * (1 + (flare * Math.abs(i - midpoint)) / midpoint),
   })),
 }))
-
-export function SplashCTAButton({
-  className,
-  cta = 'Join Beta',
-  icon = ShipWheel,
-  ...rest
-}: ButtonProps & { cta?: string; icon?: LucideIcon }) {
-  return (
-    <Button
-      variant="primary"
-      className={cn('w-fit gap-2', className)}
-      onClick={() => {
-        window.open('https://cal.com/bryan-houlton-5uvxqc/voyage-beta', '_blank')
-      }}
-      iconLeft={icon}
-      {...rest}
-    >
-      {cta}
-    </Button>
-  )
-}
-
-export function SplashWrapper({ children }: { children: React.ReactNode }) {
-  const navigate = useNavigate()
-
-  return (
-    <>
-      <Helmet>
-        <title>Voyage - Website Marketing</title>
-        <meta
-          name="description"
-          content="Voyage is a website marketing platform that helps you build, test, and optimize your website for better performance
-        and higher conversions."
-        />
-      </Helmet>
-
-      <div className="flex flex-col w-screen min-h-screen items-center gap-4">
-        <div className="flex justify-between p-4 fixed top-0 right-0 left-0 z-50 bg-white border-b">
-          <div className="flex gap-1 items-center">
-            <Button variant="subtle" onClick={() => navigate('/')} className="px-2 mr-4">
-              <ShipWheel size={24} strokeWidth={1.4} />
-              <span className="font-bold">voyage</span>
-            </Button>
-
-            {[
-              {
-                text: 'Pricing',
-                href: '/#pricing',
-              },
-            ].map((item) => (
-              <a href={item.href} key={item.href} className="hidden md:block">
-                <Button variant="subtle">{item.text}</Button>
-              </a>
-            ))}
-          </div>
-
-          <SplashCTAButton />
-        </div>
-
-        {children}
-
-        <footer className="flex justify-between items-center w-full p-4 border-t">
-          <span className="text-xs text-muted w-1/3">© 2024 Pylon Solutions, Co. All rights reserved.</span>
-
-          <div className="hidden md:block text-xs text-muted text-center w-1/3">Built with ❤️ in San Francisco, CA</div>
-
-          <div className="flex gap-4 w-1/3 justify-end">
-            <Button variant="subtle" onClick={() => navigate('/privacy')}>
-              Privacy
-            </Button>
-            <Button variant="subtle" onClick={() => navigate('/terms')}>
-              Terms
-            </Button>
-          </div>
-        </footer>
-      </div>
-    </>
-  )
-}
+const minPossible = -0.5 * amplitude * (1 + flare)
+const maxPossible = 0.5 * amplitude * (1 + flare)
 
 export function TabContent({ children, className, ...rest }: HTMLProps<HTMLDivElement>) {
   return (
@@ -113,40 +46,41 @@ export function TabContent({ children, className, ...rest }: HTMLProps<HTMLDivEl
 export function SplashPage() {
   return (
     <SplashWrapper>
-      <div className="flex flex-col items-center gap-4 mt-64 mb-32 px-4 sm:px-8 md:px-16">
-        <h1 className="text-5xl font-bold text-center z-10">Evolve your landing page.</h1>
+      <div className="flex flex-col items-center gap-4 mt-64 mb-32">
+        <h1 className="text-5xl font-bold text-center z-10">
+          A marketing stack <br></br>that grows with you.
+        </h1>
         <p className="text-lg text-center z-10">
-          Voyage automatically splits your visitors into customer segments,<br></br>then tests variants of copy and CTAs
-          for each segment.
+          Modern marketing tools aren't built for startups.<br></br>Voyage is.
         </p>
-        <SplashCTAButton className="z-10" />
-        <div className="absolute hidden md:flex top-16 left-0 -translate-x-8 -right-16 aspect-video z-0 opacity-20">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart width={400} height={300}>
-              <XAxis dataKey="category" hide type="category" allowDuplicatedCategory={false} />
-              <YAxis dataKey="value" hide />
-              {series.map((s) => (
-                <Line
-                  dataKey="value"
-                  data={s.data}
-                  name={s.name}
-                  key={s.name}
-                  type="monotone"
-                  stroke={getRandomColor()}
-                />
-              ))}
-            </LineChart>
-          </ResponsiveContainer>
+
+        <div className="flex justify-center items-center w-screen py-48 -my-32 relative text-center">
+          <SplashCTAButton className="z-10" />
+          <div className="absolute  h-full w-full aspect-video z-0 opacity-50">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart width={400}>
+                <XAxis dataKey="category" hide type="category" allowDuplicatedCategory={false} />
+                <YAxis dataKey="value" hide domain={[minPossible, maxPossible]} />
+                {series.map((s) => (
+                  <Line
+                    dataKey="value"
+                    data={s.data}
+                    name={s.name.toString()}
+                    key={s.name}
+                    dot={false}
+                    type="monotone"
+                    stroke={getRandomBlueishColor()}
+                  />
+                ))}
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
 
-      <div className="min-h-[90vh] mt-64 w-full p-16 flex text-center flex-col items-center gap-2" id="pricing">
+      <div className="min-h-[90vh] w-full p-16 flex text-center flex-col items-center gap-2" id="pricing">
         <h1 className="text-4xl font-bold">Usage-Based Pricing</h1>
-        <p className="text-center text-lg max-w-lg">
-          Enjoy a sizeable monthly free tier and only pay for what you use.
-          <br></br>
-          No sales team, no hassle.
-        </p>
+        <p className="text-center text-lg max-w-lg">Usage-based + big free tier.</p>
         <SplashCTAButton className="mt-8" />
 
         <div className="flex flex-col items-center gap-4 mt-4">
