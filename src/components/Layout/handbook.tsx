@@ -1,14 +1,34 @@
 import { PropsWithChildren } from 'react'
 
-import { Code2, Crown, HandPlatter, Lightbulb, Users } from 'lucide-react'
+import {
+  ChartLine,
+  Code2,
+  Cog,
+  Construction,
+  Crown,
+  Database,
+  FlaskRound,
+  HandPlatter,
+  Lightbulb,
+  LocateFixed,
+  Lock,
+  Users,
+} from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { ActionIcon, Button } from 'slate-ui'
 
 import { SplashWrapper } from './'
 
-export const SIDEBAR_GROUPS: {
+type HandbookSidebarItem = {
   name: string
-  items: { name: string; icon: any; link: string; locked?: boolean; hidden?: boolean }[]
+  icon: any
+  link: string
+  locked?: boolean
+  hidden?: boolean
+}
+export const HANDBOOK_SIDEBAR: {
+  name: string
+  items: HandbookSidebarItem[]
 }[] = [
   {
     name: 'Company',
@@ -17,6 +37,11 @@ export const SIDEBAR_GROUPS: {
         name: 'Who We Are',
         icon: Users,
         link: '/handbook/company/who-we-are',
+      },
+      {
+        name: 'How We Work',
+        icon: Cog,
+        link: '/handbook/company/how-we-work',
       },
       {
         name: 'What We Believe',
@@ -28,20 +53,63 @@ export const SIDEBAR_GROUPS: {
         icon: HandPlatter,
         link: '/handbook/company/who-we-serve',
       },
+      {
+        name: 'Product Vision',
+        icon: Lightbulb,
+        link: '/handbook/company/product-vision',
+      },
     ],
   },
   {
     name: 'Product',
     items: [
       {
-        name: 'Long Term Vision',
-        icon: Lightbulb,
-        link: '/handbook/product/long-term-vision',
-      },
-      {
         name: 'Installation',
         icon: Code2,
         link: '/handbook/product/installation',
+      },
+      {
+        name: 'Data Layer',
+        icon: Database,
+        link: '/handbook/product/data-layer',
+      },
+      {
+        name: 'Web Analytics',
+        icon: ChartLine,
+        link: '/handbook/product/web-analytics',
+      },
+      {
+        name: 'Reveal',
+        icon: LocateFixed,
+        link: '/handbook/product/reveal',
+      },
+      {
+        name: 'Optimize',
+        icon: FlaskRound,
+        link: '/handbook/product/optimize',
+      },
+    ],
+  },
+  {
+    name: 'Integrations',
+    items: [
+      {
+        name: 'HubSpot',
+        icon: Construction,
+        link: '/handbook/integrations/hubspot',
+        locked: true,
+      },
+      {
+        name: 'Salesforce',
+        icon: Construction,
+        link: '/handbook/integrations/salesforce',
+        locked: true,
+      },
+      {
+        name: 'Marketo',
+        icon: Construction,
+        link: '/handbook/integrations/marketo',
+        locked: true,
       },
     ],
   },
@@ -53,7 +121,7 @@ export function HandbookLayout({ children }: PropsWithChildren) {
     <SplashWrapper>
       <div className="w-screen h-full flex flex-1 items-stretch">
         <div className="fixed bg-muted top-16 bottom-16 left-0 h-full p-3 border-r flex flex-col items-center lg:items-stretch w-16 lg:w-72 gap-2">
-          {SIDEBAR_GROUPS.map((group) => (
+          {HANDBOOK_SIDEBAR.map((group) => (
             <div className="flex flex-col gap-1 w-full" key={group.name}>
               <div className="gap-2 items-center hidden lg:flex w-full pl-2 mt-3">
                 <span className="text-sm text-muted">{group.name}</span>
@@ -69,7 +137,7 @@ export function HandbookLayout({ children }: PropsWithChildren) {
                           className="gap-2"
                           icon={item.icon}
                           disabled={item.locked}
-                          variant={window.location.pathname.split('/')[1] === item.link ? 'secondary' : 'subtle'}
+                          variant={window.location.pathname === item.link ? 'secondary' : 'subtle'}
                           onClick={() => navigate(item.link)}
                           data-link={item.link}
                         />

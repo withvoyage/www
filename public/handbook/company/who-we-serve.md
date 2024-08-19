@@ -1,10 +1,10 @@
-## Venture-Backed Startups
+## Startups
 
-If you're running a SaaS startup, **Voyage is for you**.
+If you're running a startup, **Voyage is for you**.
 
 Existing marketing tools aren't for early stage companies. Rarely are they usage-based + they often want annual contracts. <a href="handbook/company/what-we-believe#upmarket" target="_blank">Read why</a>.
 
-Plus, other tools are built for mid-market/enterprise where the goals or marketing are different.
+In mid-market or enterprise, the goals of marketing are different.
 
 ### Pre-Product Market Fit
 
@@ -27,3 +27,11 @@ If you're pre-product market fit, Voyage can help you find the right channels an
 If you don't have consistent revenue and you're outgrowing our free plan, [email me](mailto:bryan.houlton@withvoyage.com) and we'll work something out.
 
 If you're post-product market fit, Voyage can help you optimize your pipeline and keep tabs on funnel health. We're likely still a cheaper option than other tools you're using, plus each of our tools cross-pollinate really well.
+
+## Mid-Market / Enterprise
+
+We're not excluding you. If you're in this category, we'd [love to talk](https://cal.com/bryan-houlton-5uvxqc/mid-market-enterprise-chat).
+
+Chances are we can offer you a volume discount even beyond our [already cheap pricing](/#pricing).
+
+You can also feel free to self-onboard if you'd like.

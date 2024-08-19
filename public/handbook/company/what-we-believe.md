@@ -27,4 +27,6 @@ We hope you find Voyage useful enough to stick with us as you scale. 🚀
 
 A user should be able to find us, onboard seamlessly, deploy, and see actionable results — all without putting down a credit card or talking to any person on our team.
 
-This means that plans for all products should start at $0/mo, and the product should be easy enough to use that most marketers can get started without needing a CSM or onboarding call.
+This means that plans for all products should start at $0/mo, and the product should be easy enough to use that most marketers can get started without needing a CSM or onboarding call\*.
+
+_\*We currently have an onboarding call just because we literally need to do a few things manually to onboard each customer. This will be automated soon and you'll be able to self-onboard._

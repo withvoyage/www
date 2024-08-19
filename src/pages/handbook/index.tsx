@@ -7,14 +7,8 @@ import rehypeRaw from 'rehype-raw'
 import remarkBreaks from 'remark-breaks'
 import { Button, Icon } from 'slate-ui'
 
-import { HandbookLayout } from '@components/Layout/handbook'
+import { HANDBOOK_SIDEBAR, HandbookLayout } from '@components/Layout/handbook'
 
-const kebabToTitle = (str: string) => {
-  return str
-    .split('-')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ')
-}
 type Contributor = {
   avatar_url: string
   login: string
@@ -87,12 +81,14 @@ export function HandbookPage() {
     loadMarkdown()
   }, [page])
 
+  const item = HANDBOOK_SIDEBAR.flatMap((group) => group.items).find((item) => item.link === `/handbook/${page}`)
+
   return (
     <HandbookLayout>
       {page && (
         <div className="mkdwn">
           <div className="flex items-center justify-between">
-            <h1>{kebabToTitle(page.split('/').at(-1) || '')}</h1>
+            <h1 className="text-4xl !mt-0">{item?.name}</h1>
 
             {contributors.length > 0 && (
               <div className="hidden md:flex gap-4 items-center border rounded-lg bg-muted p-2">
@@ -123,8 +119,8 @@ export function HandbookPage() {
           </span>
 
           {!content.includes('!DOCTYPE') && (
-            <Markdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkBreaks]}>
-              {content.replace(/\\/gi, '\n')}
+            <Markdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkBreaks]} className="mt-4">
+              {content}
             </Markdown>
           )}
         </div>
@@ -133,7 +129,7 @@ export function HandbookPage() {
       {(!content || content.includes('!DOCTYPE')) && (
         <div className="border rounded-lg bg-muted flex-1 flex flex-col relative p-8 overflow-hidden gap-2">
           <div className="flex items-center gap-2">
-            <Icon icon={TriangleAlert} size="lg" className="text-info-700" />
+            <Icon icon={TriangleAlert} size="lg" />
             <h2>Uh oh!</h2>
           </div>
           <p>Looks like this page doesn't exist yet.</p>
