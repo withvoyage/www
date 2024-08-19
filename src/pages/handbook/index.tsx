@@ -95,7 +95,7 @@ export function HandbookPage() {
             <h1>{kebabToTitle(page.split('/').at(-1) || '')}</h1>
 
             {contributors.length > 0 && (
-              <div className="flex gap-4 items-center border rounded-lg bg-muted p-2">
+              <div className="hidden md:flex gap-4 items-center border rounded-lg bg-muted p-2">
                 <span className="text-sm text-muted">Contributors:</span>
                 <div className="flex -gap-4">
                   {contributors.map((contributor) => (
@@ -114,8 +114,8 @@ export function HandbookPage() {
           </div>
           <span className="text-muted text-sm flex gap-2 items-center">
             Last Updated: {lastEdited ? lastEdited.toDateString() : 'Unknown'}
-            <span>|</span>
-            <a href={githubLink} target="_blank">
+            <span className="hidden md:d-block">|</span>
+            <a href={githubLink} target="_blank" className="hidden md:d-block">
               <Button size="sm" variant="secondary" iconLeft={GitPullRequest}>
                 Make an edit
               </Button>
