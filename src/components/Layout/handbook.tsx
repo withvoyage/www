@@ -105,12 +105,6 @@ export const HANDBOOK_SIDEBAR: {
         link: '/handbook/integrations/salesforce',
         locked: true,
       },
-      {
-        name: 'Marketo',
-        icon: Construction,
-        link: '/handbook/integrations/marketo',
-        locked: true,
-      },
     ],
   },
 ]
