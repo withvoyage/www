@@ -70,7 +70,6 @@ export function HandbookPage() {
               })
             )
 
-            console.log(profiles)
             setContributors(profiles.filter((profile) => profile !== null))
           }
         })
