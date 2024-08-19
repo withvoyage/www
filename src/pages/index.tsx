@@ -1,10 +1,25 @@
 import { HTMLProps } from 'react'
 
-import { FlaskRound, LocateFixed } from 'lucide-react'
-import { Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
-import { cn, Icon } from 'slate-ui'
+import {
+  FlaskRound,
+  LocateFixed,
+} from 'lucide-react'
+import {
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+} from 'recharts'
+import {
+  cn,
+  Icon,
+} from 'slate-ui'
 
-import { SplashCTAButton, SplashWrapper } from '@components/Layout'
+import {
+  SplashCTAButton,
+  SplashWrapper,
+} from '@components/Layout'
 import { getRandomBlueishColor } from '@utils/colors'
 
 // Generate a similar set of lines, but they all converge
@@ -106,7 +121,7 @@ export function SplashPage() {
             },
           ].map(({ name, items }) => (
             <div className="flex flex-col gap-4 w-fit" key={name}>
-              <div className="flex gap-4 mt-4">
+              <div className="flex gap-4 mt-4 items-center">
                 <div className="flex-1 border-b" />
                 <span className="text-sm uppercase text-muted">{name}</span>
                 <div className="flex-1 border-b" />
