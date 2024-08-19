@@ -15,9 +15,9 @@ Being carried by a strong GTM makes it hard to keep a culture of shipping produc
 
 So it's natural for GTM-led companies to move up-market towards big, juicy, enterprise contracts and leave the small customer behind. We've seen this happen first hand.
 
-Because enterprise GTM motions are expensive, this cost gets forwarded to you, making it unaffordable for startups.
+Because enterprise GTM teams are expensive this cost gets forwarded to you, making it unaffordable for startups.
 
-We're building a fully PLG version of these tools, topped off with a generous free tier and usage-based pricing.
+So we're building a fully PLG version of these tools, topped off with a generous free tier and usage-based pricing.
 
 **Voyage will be the only option many startups can afford since we don’t have a huge operational GTM cost**.
 
