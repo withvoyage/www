@@ -2,7 +2,10 @@
 
 Our growth lever should never be “getting better at sales” or "move upmarket".
 
-Voyage thrives by building products that are easy to access and scale in value.
+Voyage thrives by building products that are
+
+1. easy to get started with
+2. scale pricing with value
 
 Because we believe this, keeping the company product/eng-centric is critical.
 
