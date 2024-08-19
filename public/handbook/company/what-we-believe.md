@@ -19,7 +19,7 @@ Because enterprise GTM teams are expensive this cost gets forwarded to you, maki
 
 So we're building a fully PLG version of these tools, topped off with a generous free tier and usage-based pricing.
 
-**Voyage is the _first_ platform serving startups - and we have bonkers low GTM costs, so you're not footing the bill.**.
+**Voyage is the _first_ platform serving startups - and we have bonkers low GTM costs, so you're not footing the bill.**
 
 We hope you find Voyage useful enough to stick with us as you scale. 🚀
 
