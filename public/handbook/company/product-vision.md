@@ -8,13 +8,13 @@
 - <a href="https://www.drift.com/" target="_blank">Drift</a>
 - <a href="https://optimizely.com/" target="_blank">Optimizely</a>
 - <a href="https://www.g2.com/" target="_blank">G2</a>
+- <a href="https://6sense.com/" target="_blank">6sense</a>
 
 **Downstream Tools**: tools that consume data from your warehouse to personalize content, generate reports, etc. Examples include:
 
 - <a href="https://www.demandbase.com/" target="_blank">Demandbase</a>
-- <a href="https://www.terminus.com/" target="_blank">Terminus</a>
 - <a href="https://www.mutinyhq.com/" target="_blank">Mutiny</a>
-- <a href="https://hockeystack.com/" target="_blank">HockeyStack</a>
+- a whole bunch of BI tools
 
 ## Combining Tools = Voyage
 
