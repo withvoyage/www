@@ -5,9 +5,9 @@ Our growth lever should never be “getting better at sales” or "move upmarket
 Voyage thrives by building products that are
 
 1. easy to get started with
-2. scale pricing with value
+2. scale costs with usage
 
-Because we believe this, keeping the company product/eng-centric is critical.
+Because we believe this, keeping the company product/eng-centric is critical. Shipping better products is our primary way to grow.
 
 <h2 id="upmarket">Marketing software has moved upmarket.</h2>
 
