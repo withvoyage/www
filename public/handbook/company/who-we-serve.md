@@ -20,10 +20,10 @@ Here, you've figured out how to land consistent revenue. You've got a healthy pi
 
 With a good idea of who your customers are and which messaging works, you're looking to scale and keep tabs on funnel health.
 
-### Where We Fit
+### Where Voyage Works
 
-Voyage is starting by serving the pre-product market fit stage. We're building tools that help you figure out what works and what doesn't.
+If you're pre-product market fit, Voyage can help you find the right channels and messaging. And our goal with our free plan is to never charge you until you've hit a consistent revenue stream.
 
-We grow by building tools for you once you've figured out what works. As you scale, so does your tool usage with us. Eventually you'll transition off of our free plan and onto something paid.
+If you don't have consistent revenue and you're outgrowing our free plan, [email me](mailto:bryan.houlton@withvoyage.com) and we'll work something out.
 
-## Growth Stage Companies
+If you're post-product market fit, Voyage can help you optimize your pipeline and keep tabs on funnel health. We're likely still a cheaper option than other tools you're using, plus each of our tools cross-pollinate really well.
