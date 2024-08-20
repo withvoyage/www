@@ -1,7 +1,13 @@
-import { LucideIcon, ShipWheel } from 'lucide-react'
+import {
+  LucideIcon,
+  ShipWheel,
+} from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
 import { useNavigate } from 'react-router-dom'
-import { Button, cn } from 'slate-ui'
+import {
+  Button,
+  cn,
+} from 'slate-ui'
 import { ButtonProps } from 'slate-ui/dist/cjs/components/Button/Button.types'
 
 export function SplashCTAButton({
@@ -68,7 +74,7 @@ export function SplashWrapper({ children }: { children: React.ReactNode }) {
 
         <div className="my-16 w-full flex-1 max-w-screen flex flex-col">{children}</div>
 
-        <footer className="flex justify-between items-center w-screen fixed bottom-0 h-16 bg-white p-4 border-t">
+        <footer className="flex justify-between items-center w-screen h-16 bg-white p-4 border-t">
           <span className="text-xs text-muted w-1/3">© 2024 Pylon Solutions, Co. All rights reserved.</span>
 
           <div className="hidden md:block text-xs text-muted text-center w-1/3">Built with ❤️ in San Francisco, CA</div>

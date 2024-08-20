@@ -93,7 +93,16 @@ export function SplashPage() {
         </div>
       </div>
 
-      <div className="min-h-[90vh] w-full p-16 flex text-center flex-col items-center gap-2" id="pricing">
+      {/* Demo */}
+      <iframe
+        src="https://capture.navattic.com/clzyv15xo000003jv943s9dfu"
+        style={{ aspectRatio: '16 / 9' }}
+        className="border-none outline outline-4 outline-offset-2 rounded-lg mx-24 max-h-[80vh] hidden lg:block"
+        allow="fullscreen"
+        id="navattic-embed"
+      />
+
+      <div className="w-full p-16 flex text-center flex-col items-center gap-2 my-32" id="pricing">
         <h1 className="text-4xl font-bold">Usage-Based Pricing</h1>
         <p className="text-center text-lg max-w-lg">Usage-based + big free tier.</p>
         <SplashCTAButton className="mt-8" />
@@ -112,9 +121,9 @@ export function SplashPage() {
                 },
                 {
                   icon: FlaskRound,
-                  title: 'Evolution',
+                  title: 'Optimize',
                   text: '1,000 visitors per month free, then $25 per 1,000 visitors',
-                  cta: 'Evolve your Site',
+                  cta: 'Optimize your Messaging',
                   iconCta: FlaskRound,
                 },
               ],
