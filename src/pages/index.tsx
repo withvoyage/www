@@ -97,7 +97,7 @@ export function SplashPage() {
       <iframe
         src="https://capture.navattic.com/clzyv15xo000003jv943s9dfu"
         style={{ aspectRatio: '16 / 9' }}
-        className="border-none outline outline-4 outline-offset-2 rounded-lg mx-24 max-h-[80vh] hidden lg:block"
+        className="border-none outline outline-4 outline-offset-2 rounded-lg mx-24 max-h-[80vh] mt-12 hidden lg:block"
         allow="fullscreen"
         id="navattic-embed"
       />
