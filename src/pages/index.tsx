@@ -123,7 +123,7 @@ export function SplashPage() {
                   icon: FlaskRound,
                   title: 'Optimize',
                   text: '1,000 visitors per month free, then $25 per 1,000 visitors',
-                  cta: 'Optimize your Messaging',
+                  cta: 'Optimize Messaging',
                   iconCta: FlaskRound,
                 },
               ],
