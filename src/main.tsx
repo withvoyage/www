@@ -8,7 +8,9 @@ import { HelmetProvider } from 'react-helmet-async'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { SlateProvider } from 'slate-ui'
 
+import { PageNotFound } from '@pages/404'
 import { HandbookPage } from '@pages/handbook'
+import { PrivacyPage } from '@pages/privacy'
 
 import { SplashPage } from './pages/'
 
@@ -26,10 +28,18 @@ const splashRouter = createBrowserRouter([
         element: <SplashPage />,
       },
       {
+        path: 'privacy',
+        element: <PrivacyPage />,
+      },
+      {
         path: 'handbook/*',
         element: <HandbookPage />,
       },
     ],
+  },
+  {
+    path: '*',
+    element: <PageNotFound />,
   },
 ])
 
